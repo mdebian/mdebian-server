@@ -1,0 +1,8 @@
+Package: mdebian-tnt
+Version: 1.0
+Section: video
+Priority: optional
+Architecture: all
+Depends: dvblast, w-scan, dvb-apps, dtv-scan-tables, dvb-tools
+Maintainer: Michaël Roy <microygh@gmail.com>
+Description: Stream the TV

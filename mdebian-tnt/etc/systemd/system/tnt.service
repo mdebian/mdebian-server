@@ -1,0 +1,10 @@
+[Unit]
+Description=DVB-T streaming server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/tnt-stream
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

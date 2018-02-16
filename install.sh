@@ -2,9 +2,10 @@
 
 # Select the different configurations to install
 SELECT=$(whiptail --title "mdebian-server" --checklist --separate-output \
-"Choose custom configurations :" 20 78 1 \
+"Choose custom configurations :" 20 78 3 \
 "snmpd" "Configure the SNMP service" OFF \
 "syslog-ng" "Configure the syslog-ng service" OFF \
+"tnt" "Custom TV streaming service" OFF \
 3>&1 1>&2 2>&3)
 
 # No option selected or canceled
