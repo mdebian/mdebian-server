@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# Halt on error
+set -e
+
+# Restart the syslog-ng service
+systemctl restart syslog-ng

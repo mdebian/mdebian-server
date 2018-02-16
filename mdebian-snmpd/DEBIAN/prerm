@@ -1,0 +1,16 @@
+#! /bin/sh
+
+# Halt on error
+set -e
+
+# Remove our configuration
+[ -L /etc/default/snmpd ] && rm /etc/default/snmpd
+[ -L /etc/snmp/snmpd.conf ] && rm /etc/snmp/snmpd.conf
+
+# Restore the original configuration
+dpkg-divert --remove --package mdebian-snmpd --rename --divert /etc/default/snmpd.backup /etc/default/snmpd
+dpkg-divert --remove --package mdebian-snmpd --rename --divert /etc/snmp/snmp.conf.backup /etc/snmp/snmp.conf
+dpkg-divert --remove --package mdebian-snmpd --rename --divert /etc/snmp/snmpd.conf.backup /etc/snmp/snmpd.conf
+
+# Restart the SNMP service
+systemctl restart snmpd

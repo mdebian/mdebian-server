@@ -1,0 +1,8 @@
+Package: mdebian-snmpd
+Version: 1.0
+Section: admin
+Priority: optional
+Architecture: all
+Depends: snmp, snmpd, snmp-mibs-downloader
+Maintainer: Michaël Roy <microygh@gmail.com>
+Description: Custom configuration for the SNMP service

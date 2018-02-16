@@ -1,0 +1,5 @@
+# snmpd control (yes means start daemon).
+SNMPDRUN=yes
+
+# snmpd options (use syslog, close stdin/out/err).
+SNMPDOPTS='-Lsd -Lf /dev/null -u Debian-snmp -g Debian-snmp -I -smux,mteTrigger,mteTriggerConf -p /run/snmpd.pid'
