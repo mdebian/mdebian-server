@@ -10,7 +10,6 @@ dpkg-divert --add --package mdebian-snmpd --rename --divert /etc/snmp/snmpd.conf
 
 # Configure the SNMP service
 ln -sf /etc/default/snmpd.mdebian /etc/default/snmpd
-ln -sf /etc/snmp/snmp.conf.mdebian /etc/snmp/snmp.conf
 ln -sf /etc/snmp/snmpd.conf.mdebian /etc/snmp/snmpd.conf
 
 # Restart the SNMP service
