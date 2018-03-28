@@ -14,14 +14,23 @@ Installation du firmware :
 	cp dvb-demod-si2168-b40-01.fw /lib/firmware/
 	reboot
 
-## Scan des chaines
+## Recherche des chaines
+
+Installation des logiciels nécessaires :
 
 	apt install w-scan dvb-apps dtv-scan-tables dvb-tools
+
+Recherche des chaînes :
+
+	scan /usr/share/dvb/dvb-legacy/dvb-t/fr-All > channels-scan.conf
+
+Autre :
 
 	w_scan > channels.conf
 	w_scan -L > channels.xspf
 
 	scan /usr/share/dvb/dvb-legacy/dvb-t/fr-All
+
 
 ## Diffusion de la TNT
 
@@ -31,8 +40,8 @@ Installation de dvblast :
 
 Fichier de configuration `/etc/dvblast/tnt` :
 
-	230.0.0.1:5000 1 1031 # Arte
-	230.0.0.2:5000 1 1045 # France 5
+	230.0.0.1:5001 1 1031 # Arte
+	230.0.0.1:5002 1 1045 # France 5
 
 Activation du stream vidéo :
 
@@ -43,8 +52,8 @@ Activation du stream vidéo :
 
 Lecture du stream vidéo :
 
-	vlc rtp://230.0.0.1:5000
-	vlc rtp://230.0.0.2:5000
+	vlc rtp://230.0.0.1:5001
+	vlc rtp://230.0.0.1:5002
 
 ## Raspberry
 
