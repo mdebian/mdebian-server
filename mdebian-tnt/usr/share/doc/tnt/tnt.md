@@ -38,14 +38,21 @@ Installation de dvblast :
 
 	apt install dvblast
 
-Fichier de configuration `/etc/dvblast/tnt` :
+Fichier de configuration `/etc/dvblast/tnt.conf` :
 
 	230.0.0.1:5001 1 1031 # Arte
 	230.0.0.1:5002 1 1045 # France 5
 
+	230.0.0.1:5005 1 1045 # France 5
+	230.0.0.1:5006 1 1025 # M6
+	230.0.0.1:5007 1 1031 # Arte
+	230.0.0.1:5009 1 1026 # W9
+	230.0.0.1:5022 1 1046 # 6ter
+
+
 Activation du stream vidéo :
 
-	dvblast --frequency 554000000 --config-file /etc/dvblast/tnt
+	dvblast --frequency 554000000 --config-file /etc/dvblast/tnt.conf
 
 	# dvblast -a 0 -f 554000000 -c conf-5 -m QAM_64 -b 8 -e
 	# dvblast -f 554000000 -c conf-5
