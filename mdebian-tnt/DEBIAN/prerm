@@ -4,5 +4,5 @@
 set -e
 
 # Disable the streaming service
-#systemctl stop tnt.service
-#systemctl disable tnt.service
+systemctl stop tnt.service
+systemctl disable tnt.service

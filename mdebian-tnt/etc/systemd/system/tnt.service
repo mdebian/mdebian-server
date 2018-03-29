@@ -1,11 +1,11 @@
 [Unit]
 Description=DVB-T streaming server
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
-ExecStart=dvblast --frequency 554000000 --config-file /etc/dvblast/tnt.conf
-#ExecStart=/usr/bin/tnt-stream
+ExecStart=/usr/bin/dvblast --quiet --frequency 554000000 --config-file /etc/dvblast/tnt.conf
 Restart=on-failure
 
-#[Install]
-#WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
