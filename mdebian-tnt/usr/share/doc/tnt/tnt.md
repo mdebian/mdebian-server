@@ -62,3 +62,34 @@ Lecture du stream vidéo :
 
 	IP : 10.0.36.200 /24
 	SSH : etudiant / tprezo
+
+## Service de diffusion automatique
+
+Fichier de configuration `/etc/systemd/system/tnt.service` :
+
+	[Unit]
+	Description=DVB-T streaming server
+	Wants=network-online.target
+	After=network-online.target
+
+	[Service]
+	ExecStart=/usr/bin/dvblast --quiet --frequency 554000000 --config-file /etc/dvblast/tnt.conf
+	Restart=on-failure
+
+	[Install]
+	WantedBy=multi-user.target
+
+Activation du service :
+
+	systemctl enable tnt
+	systemctl start tnt
+
+Désactivation du service :
+
+	systemctl stop tnt
+	systemctl disable tnt
+
+Diagnostic du service :
+
+	systemctl status tnt
+	systemctl restart tnt
