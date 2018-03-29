@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# Halt on error
+set -e
+
+# Disable the streaming service
+systemctl stop tnt.service
+systemctl disable tnt.service

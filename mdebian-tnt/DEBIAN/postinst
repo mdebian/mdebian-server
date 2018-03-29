@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# Halt on error
+set -e
+
+# Active the streaming service
+systemctl enable tnt.service
+systemctl start tnt.service
