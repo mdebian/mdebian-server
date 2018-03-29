@@ -1,3 +1,0 @@
-#! /bin/sh
-
-dvblast --quiet --frequency 554000000 --config-file /etc/dvblast/tnt.conf
