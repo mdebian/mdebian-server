@@ -4,5 +4,5 @@
 set -e
 
 # Active the streaming service
-systemctl enable tnt.service
-systemctl start tnt.service
+#systemctl enable tnt.service
+#systemctl start tnt.service
